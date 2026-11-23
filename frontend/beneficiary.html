@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficiary Dashboard - PDS Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">PDS <span>Tracker</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html" id="logout">Logout</a>
+    </nav>
+</header>
+
+<main class="dashboard">
+    <h1>Beneficiary Dashboard</h1>
+    <p>Find ration shops and check available commodities.</p>
+
+    <section class="dashboard-card">
+        <h2>Search Ration Shops</h2>
+
+        <input type="text" id="beneficiarySearch"
+               placeholder="Enter shop name or location">
+
+        <button id="searchButton">Search</button>
+        <button id="showAllButton">Show All</button>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Shop Availability</h2>
+        <div id="beneficiaryShopList"></div>
+    </section>
+
+    <!-- Submit Complaint -->
+    <section class="dashboard-card">
+        <h2>Submit a Complaint</h2>
+
+        <p>If you face any problem with ration availability or shop services,
+           submit your complaint here.</p>
+
+        <form id="complaintForm">
+
+            <label for="complaintSubject">Complaint Subject</label>
+
+            <input
+                type="text"
+                id="complaintSubject"
+                placeholder="Enter complaint subject"
+                maxlength="150"
+                required
+            >
+
+            <label for="complaintDescription">Complaint Description</label>
+
+            <textarea
+                id="complaintDescription"
+                placeholder="Describe your problem..."
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">Submit Complaint</button>
+
+            <p id="complaintMessage"></p>
+
+        </form>
+    </section>
+
+    <!-- My Complaints -->
+    <section class="dashboard-card">
+        <h2>My Complaints</h2>
+
+        <div id="myComplaints">
+            Loading complaints...
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 PDS Tracker | Mini Project</p>
+</footer>
+
+<script src="js/beneficiary.js"></script>
+
+</body>
+</html>

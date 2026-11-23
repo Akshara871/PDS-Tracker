@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficiary Registration - PDS Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">PDS <span>Tracker</span></div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#login">Login</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <section class="dashboard-card">
+
+            <h1>Beneficiary Registration</h1>
+
+            <p>
+                Create an account to check ration shop
+                stock availability.
+            </p>
+
+            <form id="registerForm">
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="phone">Mobile Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your mobile number"
+                    pattern="[0-9]{10}"
+                    required
+                >
+
+                <label for="address">Address</label>
+                <textarea
+                    id="address"
+                    placeholder="Enter your address"
+                    rows="3"
+                    required
+                ></textarea>
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    minlength="8"
+                    required
+                >
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+                <button type="submit">Register</button>
+
+            </form>
+
+            <p id="registerMessage"></p>
+
+            <p>
+                Already have an account?
+                <a href="index.html#login">Login here</a>
+            </p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 PDS Tracker | Mini Project</p>
+    </footer>
+
+    <!-- Registration JavaScript -->
+    <script src="js/register.js"></script>
+
+</body>
+</html>

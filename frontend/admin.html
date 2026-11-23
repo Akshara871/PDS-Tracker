@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PDS Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">PDS <span>Tracker</span></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dealer.html">Dealer Dashboard</a>
+        <a href="login.html" id="logout">Logout</a>
+    </nav>
+</header>
+
+<main class="dashboard">
+
+    <h1>Administrator Dashboard</h1>
+    <p>Monitor users, ration shops, commodity stock and system activities.</p>
+
+    <section class="dashboard-card">
+        <h2>Shop Monitoring</h2>
+        <div id="adminShop">Loading shops...</div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Commodity Availability</h2>
+        <div id="adminStock">Loading stock...</div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Registered Users</h2>
+        <div id="adminUsers">Loading users...</div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Recent Activity Logs</h2>
+        <div id="adminLogs">Loading activity logs...</div>
+    </section>
+
+    <!-- Complaint Management -->
+    <section class="dashboard-card">
+        <h2>Complaint Management</h2>
+        <p>View beneficiary complaints and update their status.</p>
+        <div id="adminComplaints">Loading complaints...</div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>System Information</h2>
+        <p>Project: PDS Tracker</p>
+        <p>Monitoring: Users, shop stock and shop status</p>
+        <p id="lastChecked"></p>
+    </section>
+
+</main>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
