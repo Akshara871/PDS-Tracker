@@ -33,32 +33,43 @@ public class SecurityConfig {
 
         http
             .csrf(csrf -> csrf.disable())
+
+            // CORS configuration
             .cors(cors -> cors.configurationSource(request -> {
-    var corsConfig = new org.springframework.web.cors.CorsConfiguration();
+                var corsConfig =
+                    new org.springframework.web.cors.CorsConfiguration();
 
-    corsConfig.setAllowedOrigins(
-        java.util.List.of("http://127.0.0.1:5500", "http://localhost:5500")
-    );
+                corsConfig.setAllowedOrigins(
+                    java.util.List.of(
+                        "http://127.0.0.1:5500",
+                        "http://localhost:5500"
+                    )
+                );
 
-    corsConfig.setAllowedMethods(
-        java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")
-    );
+                corsConfig.setAllowedMethods(
+                    java.util.List.of(
+                        "GET", "POST", "PUT", "DELETE", "OPTIONS"
+                    )
+                );
 
-    corsConfig.setAllowedHeaders(
-        java.util.List.of("*")
-    );
+                corsConfig.setAllowedHeaders(
+                    java.util.List.of("*")
+                );
 
-    return corsConfig;
-}))
+                return corsConfig;
+            }))
 
+            // Stateless JWT authentication
             .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
 
+            // Authorization rules
             .authorizeHttpRequests(auth -> auth
 
-                // Public APIs
+                // Public home page and authentication APIs
                 .requestMatchers(
+                    "/",
                     "/api/auth/register",
                     "/api/auth/login"
                 ).permitAll()
@@ -75,10 +86,11 @@ public class SecurityConfig {
                 .requestMatchers("/api/beneficiary/**")
                 .hasRole("BENEFICIARY")
 
-                // Other APIs require authentication
+                // All remaining APIs require authentication
                 .anyRequest().authenticated()
             )
 
+            // Add JWT filter
             .addFilterBefore(
                 jwtAuthenticationFilter,
                 UsernamePasswordAuthenticationFilter.class
