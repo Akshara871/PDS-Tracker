@@ -1,6 +1,5 @@
 
-const API_URL = "https://pds-tracker.onrender.com";
-
+const API_URL = "https://pds-tracker.onrender.com/api";
 let SHOP_ID = null;
 
 const commodityIds = {
