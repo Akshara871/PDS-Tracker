@@ -128,7 +128,7 @@ window.showAllShops = showAllShops;
 
 // 5. LOGIN SYSTEM - CONNECTED TO SPRING BOOT BACKEND
 
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://pds-tracker.onrender.com/api";
 
 const loginForm = document.getElementById("loginForm");
 
